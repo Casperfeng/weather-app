@@ -1,6 +1,6 @@
 const request = require('request');
 const geocode = require('./utils/geocode');
-const forecast = require('/utils/forecast');
+const forecast = require('./utils/forecast');
 
 geocode('Trondheim', (error, data) => {
   console.log('Error', error)
