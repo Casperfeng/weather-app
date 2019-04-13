@@ -1,6 +1,17 @@
 console.log('Client side js file loaded')
 
-fetch('http://localhost:3000/weather?adress=trondheim').then((response) => {
+//form
+const weatherForm = document.querySelector('form')
+
+//input-field
+const search = document.querySelector('input')
+
+//form on sumbit listener
+weatherForm.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const location = search.value
+
+  fetch('http://localhost:3000/weather?adress=trondheim').then((response) => {
   response.json().then( (data) => {
     if (data.error) {
       console.log(data.error)
@@ -9,4 +20,7 @@ fetch('http://localhost:3000/weather?adress=trondheim').then((response) => {
       console.log(forecast)
     }
   } )
+})
+
+
 })
